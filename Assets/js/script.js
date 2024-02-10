@@ -12,14 +12,39 @@ var photoURL;
 
 // Fetch local storage
 let countryLog = JSON.parse(localStorage.getItem("countries"));
+//Page initial load
+$(document).ready(function(){
+    /* 1. video-container 2.container  3.ps-0 4.country-info 5.air 6.map*/
+    $(".video-container").addClass("show");
+    $(".container").addClass("show");
+    $(".ps-0").addClass("hide");
+    $("#country-info").addClass("d-none hide");
+    $(".city-photo").addClass("d-none hide");
+    $(".air").addClass("hide");
+    $(".map").addClass("d-none hide");
+});
+
 
 // Event listener and function for search button
-$("#search").click(async function () {
-    country = $("#countryInput").val();
-    $("#country-info").addClass("d-none");
-    $(".city-photo").addClass("d-none");
-    $("#map").addClass("d-none");
+$("#searchbtn").click(async function () {
+    //minimise the website header 
+    $("#titlevideo").html('<source src="./Assets/images/video3.mp4" type="video/mp4"></source>');
+    document.getElementById("titlevideo").play();
+    $(".video-container").css({position: "relative"});
+    $("video").css({height: "350px"});
+    $(".video-text").css({fontsize: "100px"});
+    $(".advert-container").css({top: "50%"});
+   // $(".advert-container").css({textalign: "inherit"});
+    $(".input-group").css({top: "28%"});
 
+    //add the display by changing the css property
+    $(".ps-0").removeClass("hide");
+    $("#country-info").removeClass("hide");
+    $(".city-photo").removeClass("hide");
+    $(".air").removeClass("hide");
+    $(".map").removeClass("hide");
+   debugger;
+    country = $("#countryInput").val();
     // Checks if already the country exist in the local storage
     if (countryLog != null) {
         if (countryLog.length > 0) {

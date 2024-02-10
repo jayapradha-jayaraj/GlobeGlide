@@ -1,24 +1,23 @@
 * {
   box-sizing: border-box;
 }
-
-/* styling for header */
+/*Website header  height-300px*/
 video {
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
 }
-
 .video-container {
-  position: relative;
+  position: fixed;
   /* Ensure the parent container has relative positioning */
+  width: 100%;
+  height: 100%;
 }
-
 .video-text {
   text-align: center;
   font-size: 150px;
   position: absolute;
-  top: 50%;
+  top: 35%;
   /* Position the top edge of the element at the middle of the container */
   left: 50%;
   /* Position the left edge of the element at the middle of the container */
@@ -28,18 +27,15 @@ video {
   padding: 10px;
   z-index: 100;
   display: flex;
-  justify-content: center;
-  align-items: center;
   text-shadow: 4px 4px 20px black;
 }
-
 .video-text span {
-  color: #00d062;
+  color: #07beb8 ;
+  text-shadow: 4px 4px 20px black;
 }
-
 .advert-container {
   position: absolute;
-  top: 70%;
+  top: 43%;
   /* Adjust this value to position it below the video-text */
   left: 50%;
   /* Center the container horizontally */
@@ -52,15 +48,32 @@ video {
   /* Additional styles to create space between the left side and the advert text */
   padding-left: 20px;
 }
-
 /* slide animation */
 .advert {
   padding-left: 20px;
-  animation: slide-and-fade-in 1.7s forwards;
+  animation: slide-and-fade-in 1.5s forwards;
   /* Apply the animation */
   color: white;
+  font-size: 25px;
+  text-shadow: 4px 4px 3px black;
+}
+/*search*/
+.input-group {
+  animation: fade-in 5s;
+  box-shadow: 0 0 1px #ade8f4;
+  gap: 5px;
+  width: 35%;
+  height: 40px;
+  position: absolute;
+  top:50%;
+  border-color: #07beb8;
+  left:33%;
+}
+#searchbtn{
+  background-color: #07beb8;
+  border-color: #07beb8;
+  color:white;
   font-size: 20px;
-  text-shadow: 2px 2px 3px black;
 }
 
 @keyframes slide-and-fade-in {
@@ -76,20 +89,31 @@ video {
     opacity: 1;
   }
 }
-
+@keyframes fade-in {
+  0% {
+    /* Start from the left outside of the container */
+    opacity: 0;
+  }
+}
+/* Page2 Hide until the search starts*/
+.show{
+  visibility: visible;
+}
+.hide{
+  visibility: hidden;
+}
 /* styling for Airport dynamic elements */
 .airport {
-  background-color: #00d062;
+  background-color: #90e0ef;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #bef4d7;
+  box-shadow: 0 0 10px #ade8f4;
   text-align: center;
   transition: 0.3s;
   list-style: none;
   color: white;
 }
-
 .heading {
   font-size: 30px;
   font-weight: bold;
@@ -108,7 +132,12 @@ video {
   margin: 10px;
 }
 
-/* issue 49 changes */
+/* issue 49 changes 
+.ps-0{
+  width:auto;
+  height: 600px;
+  background-color: yellow;
+}*/
 .city {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
@@ -116,9 +145,8 @@ video {
   position: absolute;
   cursor: pointer;
 }
-
 .city-photo {
-  width: 30%; */
+  width: 30%; 
   background-color: white;
   position: relative;
   top: 30px;
@@ -126,11 +154,9 @@ video {
 }
 
 .city:hover {
-    box-shadow: 5px 10px 10px 0px rgba(27, 154, 63, 0.6),
+    box-shadow: 5px 10px 10px 0px #90e0ef,
     0px 10px 10px 0px rgba(62, 36, 166, 0.14);
 }
-
-
 .card-img-top {
   width: 100%;
   height: 450px;
@@ -169,13 +195,7 @@ video {
   width: 1180px;
 }
 
-.input-group {
-  box-shadow: 0 0 10px #bef4d7;
-  gap: 5px;
-}
-.input-group>::placeholder {
-  color:#bef4d7;
-}
+
 .poioption {
   position: relative;
   left: 45px;
@@ -230,8 +250,10 @@ video {
 }
 
 @media only screen and (max-width: 1024px) {
+  
   .card-title, #citydefault, .advert {
       font-size: medium;
+      text-wrap: wrap;
   }
 }
 

@@ -20,7 +20,7 @@
     <!-- Header -->
     <header>
         <div class="video-container">
-            <video autoplay muted loop>
+            <video autoplay muted loop id="titlevideo">
                 <source src="./Assets/images/video2.mp4" type="video/mp4">
             </video>
             <h1 class="video-text"><span>Globe</span> Glide</h1>
@@ -34,14 +34,12 @@
     <!-- Search Bar -->
     <div class="container">
         <div class="row justify-content-center mb-2" style="margin-bottom:3cm;">
-            <div class="col-12 col-md-6">
                 <div class="input-group ">
-                    <input type="text" placeholder="Search for a country..." id="countryInput" class="form-control">
+                    <input type="text" placeholder="Type in where you want to jet off to!" id="countryInput" class="form-control">
                     <div class="input-group-append">
-                        <button id="search" class="btn btn-outline-success">Search</button>
+                        <button class="btn btn-outline-success" id="searchbtn" >Let's travel ✈️</button>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 
@@ -85,7 +83,7 @@
 
 
     <!--city points of interest  and exchange rate-->
-    <div id="country-info" class="row mt-3">
+    <div id="country-info" class="row mt-3 page2">
         <!-- Exchange rate -->
         <div class="poi d-none col-3 " id="exchange-rate">
             <h3>Exchange Rate</h3>
@@ -136,7 +134,7 @@
     <!-- Airports -->
     <div class="air"></div>
     <!-- map -->
-    <div class="d-none" id="map"></div>
+    <div class="d-none map" id="map"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
